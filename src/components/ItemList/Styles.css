@@ -1,0 +1,6 @@
+.lista-productos {
+    display:flex; 
+    justify-Content:space-between; 
+    align-Items:center; 
+    flex-Wrap:wrap;
+}
