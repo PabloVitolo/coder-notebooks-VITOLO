@@ -7,7 +7,7 @@ const ItemListContainer = ({greeting}) => {
   const [productList, setProductList]=useState([])
   const [loading, setLoading]=useState(true)
     
-  //promesa con try cathc finally 
+  //promesa con try catch finally 
     const getProducts = async () => {
       try{
         const respuesta = await getData
