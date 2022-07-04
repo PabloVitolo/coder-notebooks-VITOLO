@@ -2,7 +2,7 @@
 const productos = [
   {
     id: 1,
-    category: "GAMER",
+    category: "gamer",
     title: "HP PAVILION",
     image: "https://i.postimg.cc/DJqKMyRf/hp1.jpg",
     stock: 33,
@@ -11,7 +11,7 @@ const productos = [
   },
   {
     id: 2,
-    category: "GAMER",
+    category: "gamer",
     title: "ACER",
     image: "https://i.postimg.cc/JzC0bBWc/acer.jpg",
     stock: 30,
@@ -20,7 +20,7 @@ const productos = [
   },
   {
     id: 3,
-    category: "OFFICE",
+    category: "office",
     title: "LENOVO",
     image: "https://i.postimg.cc/sGmC3HVt/lenovo.jpg",
     stock: 7,
@@ -29,7 +29,7 @@ const productos = [
   },
   {
     id: 4,
-    category: "SCHOOL",
+    category: "school",
     title: "APPLE",
     image: "https://i.postimg.cc/LJX28Sgv/apple.jpg",
     stock: 44,
@@ -38,7 +38,7 @@ const productos = [
   },
   {
     id: 5,
-    category: "SCHOOL",
+    category: "school",
     title: "HUAWEI",
     image: "https://i.postimg.cc/1VsZh1ZG/huawei.jpg",
     stock: 65,
@@ -47,7 +47,7 @@ const productos = [
   },
   {
     id: 6,
-    category: "GAMER",
+    category: "gamer",
     title: "SAMSUNG",
     image: "https://i.postimg.cc/s1rBDBjc/samsung.jpg",
     stock: 67,
@@ -56,7 +56,7 @@ const productos = [
   },
   {
     id: 7,
-    category: "SCHOOL",
+    category: "office",
     title: "LG",
     image: "https://i.postimg.cc/Fdt4pJWn/lg.jpg",
     stock: 98,
@@ -65,7 +65,7 @@ const productos = [
   },
   {
     id: 8,
-    category: "SCHOOL",
+    category: "school",
     title: "ADVANCE",
     image: "https://i.postimg.cc/7CJ4SNV2/advance.jpg",
     stock: 43,
@@ -74,7 +74,7 @@ const productos = [
   },
   {
     id: 9,
-    category: "SCHOOL",
+    category: "office",
     title: "DELL",
     image: "https://i.postimg.cc/rDPcdHST/dell.jpg",
     stock: 77,
@@ -83,7 +83,7 @@ const productos = [
   },
   {
     id: 10,
-    category: "SCHOOL",
+    category: "school",
     title: "HP2",
     image: "https://i.postimg.cc/wvxnzmFD/hp2.jpg",
     stock: 25,
@@ -92,7 +92,7 @@ const productos = [
   },
   {
     id: 11,
-    category: "GAMER",
+    category: "gamer",
     title: "HAIWA",
     image: "https://i.postimg.cc/9FwKcVPg/aiwa.png",
     stock: 25,
@@ -101,7 +101,7 @@ const productos = [
   },
   {
     id: 12,
-    category: "GAMER",
+    category: "gamer",
     title: "KLX",
     image: "https://i.postimg.cc/RFPyZZby/klx.jpg",
     stock: 25,
@@ -110,7 +110,7 @@ const productos = [
   },
   {
     id: 13,
-    category: "SCHOOL",
+    category: "office",
     title: "NSX",
     image: "https://i.postimg.cc/gjn5XbCJ/nsx.jpg",
     stock: 25,
@@ -119,7 +119,7 @@ const productos = [
   },
   {
     id: 14,
-    category: "SCHOOL",
+    category: "school",
     title: "DNQP",
     image: "https://i.postimg.cc/BvBRRg5q/dnqp.jpg",
     stock: 25,
