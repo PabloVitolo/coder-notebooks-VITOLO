@@ -2,16 +2,17 @@ import React from 'react'
 import Item from '../Item/Index'
 import "./Styles.css";
 
-const ItemList = ({productList}) => {
+const ItemList = ({items}) => {
   
   return (
     <div>
         <h3>Lista de productos</h3>
         <div className= 'lista-productos'>
-        {productList.map((product)=><Item key={product.id} product={product}/>)}
+        {items.map((item)=><Item key={item.id} item={item}/>)}
         </div>
     </div>
   )
 }
 
 export default ItemList
+

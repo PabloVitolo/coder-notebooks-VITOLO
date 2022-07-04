@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import ItemList from '../ItemList/Index'
-import { getData } from '../../Mocks/ApiProductos'
-import PulseLoader from 'react-spinners/PulseLoader';
+import React, { useEffect, useState } from "react";
+import { getProd } from "../../Mocks/ApiProductos";
+import PulseLoader from "react-spinners/PulseLoader";
+import ItemDetail from "../ItemDetail/Index";
+import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({greeting}) => {
-  const [productList, setProductList]=useState([])
-  const [loading, setLoading]=useState(true)
-    
-  //promesa con try cathc finally 
-    const getProducts = async () => {
-      try{
-        const respuesta = await getData
-        setProductList(respuesta)
-      }catch(error){
-        console.log(error)
-      }finally{
-        setLoading(false)
-      }
-    }
+const ItemDetailContainer = () => {
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
-      getProducts()
-    },[])
+  const { id } = useParams();
+
+  useEffect(() => {
+    setLoading(true);
+    getProd(id)
+      .then((res) => {
+        setProduct(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [id]);
 
   return (
-    <div className="landing">
-      <span>{greeting}</span>
-      {loading ? <PulseLoader /> : <ItemList productList={productList}/> }
+    <div>
+      {loading ? (
+        <PulseLoader />
+      ) : (
+        <>
+          <ItemDetail product={product} />
+        </>
+      )}
     </div>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;
