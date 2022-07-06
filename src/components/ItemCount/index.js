@@ -1,28 +1,41 @@
-import React, { useState } from "react";
-import "./styles.css";
+import React, { useState } from 'react'
 
-const ItemCount = ({ initial, stock }) => {
-  const [count, setCount] = useState(initial);
+const ItemCount = ({ initial, onAdd, stock }) => {
 
-  const add = () => {
-    stock !== count && setCount(count + 1);
-  };
+    const [count, setCount] = useState(initial);
 
-  const substract = () => {
-    initial !== count && setCount(count - 1);
-  };
+    const handlerClickAdd = () => {
+        if (count < stock) {
+            setCount(count + 1);
+        }
+    }
+
+    const handlerClickSubtract = () => {
+        if (count > 1) {
+            setCount(count - 1);
+        }
+    }
+
+    const handlerClickAddToCart = () => {
+        onAdd(count);
+    }
+
   return (
-    <div className="count">
-      <div className="buttons">
-        <button onClick={add}>+</button>
+    <div>
+      <div>
+        <button onClick={() => handlerClickAdd()} className="btn btn-outline-success"> + </button>
         <p>{count}</p>
-        <button onClick={substract}>-</button>
+        <button onClick={() => handlerClickSubtract()} className="btn btn-outline-danger"> - </button>
       </div>
-      <div className="add-cart">
-        <button>Agregar al carrito</button>
+      <div>
+      <button onClick={() => handlerClickAddToCart()} className="btn btn-success">Agregar al carrito</button>
       </div>
     </div>
   );
 };
+
+
+
+
 
 export default ItemCount;

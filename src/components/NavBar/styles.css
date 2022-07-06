@@ -8,7 +8,8 @@
 }
 
 nav {
-  background-color: rgb(210, 96, 96);
+  background: rgb(113,207,105);
+background: linear-gradient(162deg, rgba(113,207,105,1) 5%, rgba(28,121,148,1) 96%);
   display: flex;
   justify-content: space-between;
   align-items: center;
