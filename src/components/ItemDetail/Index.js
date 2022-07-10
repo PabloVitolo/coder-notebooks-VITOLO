@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const ItemDetail = ({ product }) => {
-  const [buyFinalized, setBuyFinalized] = useState(false);
+  const [endBuy, setEndBuy] = useState(false);
 
   const onAdd = (count) => {
-    setBuyFinalized(true);
+    setEndBuy(true);
   };
   return (
     <div className="detail">
@@ -20,9 +20,9 @@ const ItemDetail = ({ product }) => {
         <h4>Stock: {product.stock}</h4>
       </div>
       <div>
-        {buyFinalized ? (
+        {endBuy ? (
           <Link to="/cart">
-            <button>FINALIZAR</button>
+            <button className="btn btn-outline-danger">FINALIZAR</button>
           </Link>
         ) : (
           <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
