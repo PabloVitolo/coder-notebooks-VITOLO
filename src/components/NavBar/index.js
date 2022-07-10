@@ -1,51 +1,45 @@
 import React, { useState } from "react";
-import CartWidget from "../CartWidget";
-import { GrPersonalComputer } from 'react-icons/gr';
+import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
+import { GrPersonalComputer } from "react-icons/gr";
 import "./styles.css";
 
-const menuItems = [
+const categories = [
   {
-    id: "1",
-    label: "GAMER",
+    id: 1,
+    path: "/category/gamer",
+    name: "Gamer",
   },
   {
-    id: "2",
-    label: "OFFICE",
+    id: 2,
+    path: "/category/office",
+    name: "Office",
   },
   {
-    id: "3",
-    label: "SCHOOL",
+    id: 3,
+    path: "/category/school",
+    name: "School",
   },
 ];
-// navbar contractil usando ternarios
-const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+
+const Navbar = () => {
   return (
-    <nav className="nav">
-      <h1 className="nav-logo">CoderNotebooks<i className="logo"><GrPersonalComputer /></i></h1>
-      <div className={`nav-items ${isOpen ? "open" : ""}`.trim()}> 
-        {menuItems.map((item) => (
-          <a href="/" className="nav-item" key={item.id}>
-            {item.label}
-          </a>
-        ))}
-      </div>
-      <div className="cart">
-        <CartWidget />
-      </div>
-      <div className="nav-mobile">
-        <div className="cart-mobile">
-          <CartWidget />
-        </div>
-        <div
-          className={`nav-toggle ${isOpen ? "open" : ""}`.trim()}
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-        >
-          <div className="bar"></div>
-        </div>
-      </div>
-    </nav>
+      <nav>
+          <Link to="/">
+          <h2>CoderNotebooks<i><GrPersonalComputer/></i></h2>
+          </Link>
+          <ul>
+              {categories.map((category) => (
+                  <Link to={category.path} key={category.id}>
+                      {category.name}
+                  </Link>
+              ))}
+          </ul>
+          <Link to="/cart"><CartWidget /></Link>
+      </nav>
   );
 };
 
-export default NavBar;
+
+
+export default Navbar;

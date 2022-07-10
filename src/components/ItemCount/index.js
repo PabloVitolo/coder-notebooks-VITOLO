@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import "./styles.css";
+import React, { useState } from 'react'
 
 const ItemCount = ({ initial, onAdd, stock }) => {
 
@@ -11,7 +10,7 @@ const ItemCount = ({ initial, onAdd, stock }) => {
         }
     }
 
-    const handlerClickSubtrack = () => {
+    const handlerClickSubtract = () => {
         if (count > 1) {
             setCount(count - 1);
         }
@@ -21,19 +20,22 @@ const ItemCount = ({ initial, onAdd, stock }) => {
         onAdd(count);
     }
 
-    return (
-        <>
-        <div className="qty mt-5"> 
-            <button className="minus bg-dark" onClick={() => handlerClickSubtrack()}>-</button>
-            <h2 className="master-count">{count}</h2>
-            <button className="plus bg-dark" onClick={() => handlerClickAdd()}>+</button>
-            <button className="btn btn-primary" onClick={() => handlerClickAddToCart()}>Agregar al carrito</button>
-        </div>    
-        </>
+  return (
+    <div>
+      <div>
+        <button onClick={() => handlerClickAdd()} className="btn btn-outline-success"> + </button>
+        <p>{count}</p>
+        <button onClick={() => handlerClickSubtract()} className="btn btn-outline-danger"> - </button>
+      </div>
+      <div>
+      <button onClick={() => handlerClickAddToCart()} className="btn btn-success">Agregar al carrito</button>
+      </div>
+    </div>
+  );
+};
 
-    );
-}
 
 
 
-export default ItemCount
+
+export default ItemCount;
