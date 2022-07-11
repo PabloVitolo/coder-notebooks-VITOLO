@@ -2,12 +2,15 @@ import React from "react";
 import ItemCount from "../ItemCount/index";
 import "./Styles.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product }) => {
   const [endBuy, setEndBuy] = useState(false);
+  const { addProduct } = useContext(CartContext);
 
   const onAdd = (count) => {
+    addProduct({ ...product, qty: count });
     setEndBuy(true);
   };
   return (

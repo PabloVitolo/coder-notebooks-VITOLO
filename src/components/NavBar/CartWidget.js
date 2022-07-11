@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import "./styles.css"
+import { CartContext } from '../../context/CartContext';
+
 
 const CartWidget = () => {
+    const { qtyProducts } = useContext(CartContext);
     return (
         <div className="shop">
             <AiOutlineShoppingCart color="white" size={25} />
-            <p>4</p>
+            <p>{qtyProducts}</p>
         </div>
     );
 };
