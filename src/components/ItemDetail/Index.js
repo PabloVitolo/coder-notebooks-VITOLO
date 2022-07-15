@@ -14,22 +14,27 @@ const ItemDetail = ({ product }) => {
     setEndBuy(true);
   };
   return (
-    <div className="detail">
-      <img src={product.image} alt={product.title} width="400" />
-      <div>
-        <h1>{product.title}</h1>
-        <h2>{product.description}</h2>
-        <h3>$ {product.price}</h3>
-        <h4>Stock: {product.stock}</h4>
+    <div className="item-detail">
+      <div className="item-detail-image">
+        <img src={product.image} alt={product.title} />
       </div>
-      <div>
-        {endBuy ? (
-          <Link to="/cart">
-            <button className="btn btn-outline-danger">FINALIZAR</button>
-          </Link>
-        ) : (
-          <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
-        )}
+      <div className="item-detail-info">
+        <h1>{product.title}</h1>
+        <p>{product.description}</p>
+        <div className="item-detail-info-price">
+          <span>$ {product.price}</span>
+        </div>
+        <div>
+          {endBuy ? (
+            <Link to="/cart">
+              <button className="item-count-buttons btn btn-outline-danger">
+                TERMINAR MI COMPRA
+              </button>
+            </Link>
+          ) : (
+            <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+          )}
+        </div>
       </div>
     </div>
   );

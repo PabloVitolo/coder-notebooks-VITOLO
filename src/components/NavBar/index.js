@@ -24,22 +24,24 @@ const categories = [
 
 const Navbar = () => {
   return (
-      <nav>
-          <Link to="/">
-          <h2>CoderNotebooks<i><GrPersonalComputer/></i></h2>
+    <div className="navbar">
+      <div className="navbar-logo">
+        <GrPersonalComputer size={30} color="white" />
+        <span className="navbar-logo-text">
+          <Link to="/">coderNotebooks</Link>
+        </span>
+      </div>
+      <div className="navbar-categories">
+        {categories.map((category) => (
+          <Link to={category.path} key={category.id}>
+            {category.name}
           </Link>
-          <ul>
-              {categories.map((category) => (
-                  <Link to={category.path} key={category.id}>
-                      {category.name}
-                  </Link>
-              ))}
-          </ul>
-          <Link to="/cart"><CartWidget /></Link>
-      </nav>
+        ))}
+      </div>
+      <CartWidget />
+    </div>
   );
-};
-
+}
 
 
 export default Navbar;

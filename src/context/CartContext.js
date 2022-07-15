@@ -46,6 +46,13 @@ const CartProvider = ({ children }) => {
     return products.reduce((total, product) => total + product.price, 0);
   };
 
+const calculateTotal = () => {
+    let total = 0;
+    products.forEach((product) => (total += product.price * product.qty));
+    return total;
+}
+
+
   const clearCart = () => {
     setProducts([]);
     setQtyProducts(0);
@@ -60,6 +67,7 @@ const CartProvider = ({ children }) => {
         isInCart,
         getTotal,
         clearCart,
+        calculateTotal,
         qtyProducts,
       }}
     >
