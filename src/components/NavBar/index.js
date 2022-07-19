@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { GrPersonalComputer } from "react-icons/gr";
@@ -38,7 +37,11 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <CartWidget />
+      <div>
+      <Link to="/cart">
+        <CartWidget />
+      </Link>
+      </div>
     </div>
   );
 }

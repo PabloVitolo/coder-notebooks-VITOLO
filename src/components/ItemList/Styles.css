@@ -1,6 +1,9 @@
-.lista-productos {
-    display:flex; 
-    justify-Content:space-between; 
-    align-Items:center; 
-    flex-Wrap:wrap;
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -15px;
 }
+
+
+
