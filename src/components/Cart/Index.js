@@ -1,15 +1,23 @@
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-
+import { Link } from "react-router-dom";
+import "./Styles.css";
 
 const Cart = () => {
   const { products, removeProduct, clearCart } = useContext(CartContext);
 
-  
   if (products.length === 0) {
-    return <h2>Está vacío tu carrito :( </h2>;
-}
+    return (
+      <div>
+        <Link to="/">
+          <button className="btn-outline-primary btn-lg">
+            Carrito Vacío! Volver a la tienda
+          </button>
+        </Link>
+      </div>
+    );
+  }
   return (
     <div>
       <h1 className="text-center">Tu Carrito</h1>
@@ -47,15 +55,18 @@ const Cart = () => {
         </tbody>
       </table>
       <div className="cart-total">
-        <h3>Total: $ {products.reduce((total, product) => {
-          return total + (product.price * product.qty);
-        }, 0)}</h3>
+        <h3>
+          Total: ${" "}
+          {products.reduce((total, product) => {
+            return total + product.price * product.qty;
+          }, 0)}
+        </h3>
         <button className="btn btn-danger btn-block" onClick={clearCart}>
           Vaciar Carrito
         </button>
       </div>
     </div>
   );
-}
+};
 
 export default Cart;

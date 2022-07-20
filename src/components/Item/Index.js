@@ -1,21 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Styles.css";
 
 const Item = ({ item }) => {
-    return (
-        <div
-            style={{
-                margin: '10px 20px',
-                border: '2px solid black',
-                width: '40%',
-            }}
-        >
-            <img width="200px" src={item.image} alt="producto" />
-            <h2>{item.title}</h2>
-            <p>${item.price}</p>
-            <Link to={`/detail/${item.id}`}>Ver detalle</Link>
+  return (
+    <div className="col-md-4 col-sm-6 col-xs-12">
+        <div className="product-item">
+            <div className="product-item-img text-center">
+                <img width="200px" src={item.image} alt={item.name} />
+            </div>
+            <div className="product-item-info">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <p> $ {item.price}</p>
+                <Link to={`/detail/${item.id}`} className="btn btn-primary">
+                    Ver producto
+                </Link>
+            </div>
         </div>
+    </div>
     );
-};
+}
+
 
 export default Item;

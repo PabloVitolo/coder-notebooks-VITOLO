@@ -1,9 +1,23 @@
-.product-list {
+.products-items {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 -15px;
+  margin-top: 20px;
 }
+
+
+.wellcome-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+
+}
+
 
 
 

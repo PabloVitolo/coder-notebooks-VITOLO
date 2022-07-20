@@ -54,5 +54,10 @@
   margin-top: 10px;
 }
 
-
+.btn-outline-danger {
+  margin-bottom: 10px;
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
 
