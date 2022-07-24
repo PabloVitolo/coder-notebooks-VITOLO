@@ -2,7 +2,6 @@ import React from "react";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import "./Styles.css";
 import { db } from "../../Firebase/firebase";
 import {
   collection,
@@ -13,8 +12,7 @@ import {
 import Formulario from "../Form/form";
 
 const Cart = () => {
-  const { products, removeProduct, clearCart, total } =
-    useContext(CartContext);
+  const { products, removeProduct, clearCart, total } = useContext(CartContext);
   const [showForm, setShowForm] = useState(false);
   const [orderId, setOrderId] = useState(null);
 
@@ -28,8 +26,6 @@ const Cart = () => {
       </div>
     );
   }
-
-
 
 
   const generateOrder = (user) => {
@@ -77,20 +73,20 @@ const Cart = () => {
   }
   return (
     <div>
-       <table className="table table-striped">
-      <h1 className="text-center">Tu Carrito</h1>
-         <thead>
-           <tr>
-             <th></th>
-             <th>Producto</th>
-             <th>Precio</th>
-             <th>Cantidad</th>
-             <th>Total</th>
-             <th>Quitar</th>
-           </tr>
-         </thead>
-         <tbody>
-           {products.map((product) => (
+      <table className="table table-striped">
+        <h1 className="text-center">Tu Carrito</h1>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Quitar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
             <tr key={product.id}>
               <td>
                 <img src={product.image} width="70px" alt="product" />
@@ -121,50 +117,18 @@ const Cart = () => {
             Volver a la tienda
           </button>
         </Link>
-      <div className="cart-buttons">
-        <button onClick={() => setShowForm(true)}>Checkout</button>
-        <button onClick={generateOrder}>CONFIRMAR PEDIDO</button>
+        <div className="cart-buttons">
+          <button onClick={() => setShowForm(true)}>DATOS CLIENTE</button>
+          <button onClick={generateOrder}>CONFIRMAR PEDIDO</button>
+        </div>
+        {showForm && <Formulario />}
       </div>
-      {showForm && <Formulario />}
-    </div>
     </div>
   );
-}
+};
 
 export default Cart;
 
-//   const generateOrder = () => {
-//     const orderCollection = collection(db , "orders");
-// addDoc(orderCollection, {
-//   user: user,
-//   products: products,
-//   total: calculateTotal(),
-//   date: serverTimestamp(),
-// }).then((res) => {
-//   setOrderId(res.id);
-// }
-// ).catch((err) => {
-//   console.log(err);
-// }
-// );
-//   }
-//    const updateStock = () => {
-//     products.forEach(product => {
-//       const productCollection = collection(db , "products");
-//       updateDoc(productCollection, product.id, {
-//         stock: product.stock - product.qty,
-//       }).then(() => {
-//         console.log("Stock updated");
-//       }
-//       ).catch(err => {
-//         console.log(err);
-//       }
-//       );
-//     }
-//     );
-//   }
-
-// ESTO LO HICE YO
 //   // const checkout = () => {
 //   //   const orderCollection = collection(db, "orders");
 //   //   addDoc(orderCollection, {
