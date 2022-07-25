@@ -40,7 +40,7 @@ const ItemDetail = ({ product }) => {
         </div>
         <div className="Seguir comprando">
           <Link to="/">
-            <button className="item-count-buttons btn btn-outline-primary">
+            <button className="item-count-buttons btn btn-outline-primary btn-lg">
               Seguir comprando
             </button>
           </Link>

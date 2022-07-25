@@ -1,0 +1,173 @@
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  font-weight: bold;
+}
+.form-group input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-group button {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-group button:hover {
+  background-color: #ccc;
+}
+.form-group .error {
+  color: red;
+  font-weight: bold;
+}
+.form-group .success {
+  color: green;
+  font-weight: bold;
+}
+.form-group .warning {
+  color: orange;
+  font-weight: bold;
+}
+.form-group .info {
+  color: blue;
+  font-weight: bold;
+}
+.form-group .debug {
+  color: purple;
+  font-weight: bold;
+}
+.form-group .error-message {
+  color: red;
+  font-weight: bold;
+}
+.form-group .success-message {
+  color: green;
+  font-weight: bold;
+}
+.form-group .warning-message {
+  color: orange;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active:active {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active:active:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active:active:active {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active:active:active:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active:active:active:active {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.form-control:focus:active:active:active:active:active:active:active:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
