@@ -64,14 +64,6 @@ const Cart = () => {
     clearCart();
   };
 
-  //   const updateStock = doc(db, "products", "1");
-  //   products.forEach((product) => {
-  //     updateDoc(updateStock, product.id, {
-  //       stock: product.stock - product.qty,
-  //     });
-  //   });
-  // };
-
   if (orderId) {
     return (
       <div>
