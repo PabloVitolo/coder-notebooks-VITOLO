@@ -11,6 +11,7 @@ import {
   doc,
 } from "firebase/firestore";
 import Formulario from "../Form/form";
+import "./Index.css";
 
 const Cart = () => {
   const { products, removeProduct, clearCart, total } = useContext(CartContext);
@@ -19,10 +20,10 @@ const Cart = () => {
 
   if (products.length === 0 && orderId === null) {
     return (
-      <div className="cart">
-        <h2>carrito vacio</h2>
+      <div className="empty-cart">
+        <h2>carrito vacio! :( </h2>
         <p>
-          <Link to="/">continuar comprando</Link>
+          <Link to="/">Continuar Comprando!!!</Link>
         </p>
       </div>
     );
@@ -57,23 +58,30 @@ const Cart = () => {
       <div>
         <div className="cart-success">
           <h2>Gracias por su compra!</h2>
-          <p>Su orden ID es {orderId}</p>
-          <Link to="/">Volver a la tienda</Link>
+          <p>
+            Su orden ID es <span>{orderId}</span>
+          </p>
+          <p>
+            <Link to="/">Volver a la tienda</Link>
+          </p>
         </div>
       </div>
     );
   }
   return showForm ? (
-    <div className="cart">
-      <h2>carrito</h2>
-      <p>
-        <Link to="/">continuar comprando</Link>
-      </p>
-      <Formulario
-        generateOrder={generateOrder}
-        setShowForm={setShowForm}
-        showForm={showForm}
-      />
+    <div>
+      <h1 className="text-center">Formulario de contacto</h1>
+      <Link to="/">
+        <button className="btn btn-outline-primary">Volver a la tienda</button>
+      </Link>
+
+      <div className="contact-form">
+        <Formulario
+          generateOrder={generateOrder}
+          setShowForm={setShowForm}
+          showForm={showForm}
+        />
+      </div>
     </div>
   ) : (
     <div>
@@ -114,15 +122,26 @@ const Cart = () => {
       </table>
       <div className="cart-total">
         <h3>Total: $ {total}</h3>
-        <button className="btn btn-danger btn-block" onClick={clearCart}>
-          Vaciar Carrito
+
+        <button
+          onClick={() => setShowForm(true)}
+          className="btn btn-success btn-lg"
+        >
+          {" "}
+          Comprar{" "}
         </button>
+      </div>
+      <div>
         <Link to="/">
           <button className="btn btn-outline-primary btn-lg">
             Volver a la tienda
           </button>
         </Link>
-        <button onClick={() => setShowForm(true)}>comprar</button>
+      </div>
+      <div>
+        <button className="btn btn-danger btn-sm" onClick={clearCart}>
+          Vaciar Carrito
+        </button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./form.css";
 
 const Formulario = ({ generateOrder }) => {
   const [form, setForm] = useState({
@@ -37,7 +38,7 @@ const Formulario = ({ generateOrder }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Nombre</label>
         <input
           type="text"
           className="form-control"
@@ -59,7 +60,7 @@ const Formulario = ({ generateOrder }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="address">Address</label>
+        <label htmlFor="address">Dirección</label>
         <input
           type="text"
           className="form-control"
@@ -70,7 +71,7 @@ const Formulario = ({ generateOrder }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="city">City</label>
+        <label htmlFor="city">Ciudad</label>
         <input
           type="text"
           className="form-control"
@@ -81,7 +82,7 @@ const Formulario = ({ generateOrder }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="state">State</label>
+        <label htmlFor="state">Provincia</label>
         <input
           type="text"
           className="form-control"
@@ -92,7 +93,7 @@ const Formulario = ({ generateOrder }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="zip">Zip</label>
+        <label htmlFor="zip">Codigo Postal</label>
         <input
           type="text"
           className="form-control"
@@ -103,7 +104,7 @@ const Formulario = ({ generateOrder }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="country">Country</label>
+        <label htmlFor="country">País</label>
         <input
           type="text"
           className="form-control"
@@ -114,7 +115,7 @@ const Formulario = ({ generateOrder }) => {
         />
       </div>
       <button disabled={disabled} type="submit" className="btn btn-primary">
-        aceptar
+        FINALIZAR COMPRA
       </button>
     </form>
   );
