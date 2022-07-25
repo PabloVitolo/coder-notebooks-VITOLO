@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Formulario = ({ createOrder }) => {
+const Formulario = ({ generateOrder }) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,7 +20,7 @@ const Formulario = ({ createOrder }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createOrder(form);
+    generateOrder(form);
   }
   
 

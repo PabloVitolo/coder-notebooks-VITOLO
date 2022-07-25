@@ -10,11 +10,11 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
-// import Formulario from "../Form/form";
+import Formulario from "../Form/form";
 
 const Cart = () => {
   const { products, removeProduct, clearCart, total } = useContext(CartContext);
-  // const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
   const [orderId, setOrderId] = useState(null);
 
   if (products.length === 0 && orderId === null) {
@@ -28,19 +28,7 @@ const Cart = () => {
     );
   }
 
-  // fakeUserdePrueba
-  const user = {
-    name: "juan",
-    lastName: "perez",
-    email: "  @gmail.com",
-    phone: "123456789",
-    address: "calle falsa 123",
-    city: "cordoba",
-    country: "argentina",
-    postalCode: "12345",
-  };
-
-  const generateOrder = () => {
+  const generateOrder = (user) => {
     const orderCollection = collection(db, "orders");
     addDoc(orderCollection, {
       user,
@@ -75,11 +63,24 @@ const Cart = () => {
       </div>
     );
   }
-  return (
+  return showForm ? (
+    <div className="cart">
+      <h2>carrito</h2>
+      <p>
+        <Link to="/">continuar comprando</Link>
+      </p>
+      <Formulario
+        generateOrder={generateOrder}
+        setShowForm={setShowForm}
+        showForm={showForm}
+      />
+    </div>
+  ) : (
     <div>
       <h1 className="text-center">Tu Carrito</h1>
       <table className="table table-striped">
         <thead>
+          {" "}
           <tr>
             <th></th>
             <th>Producto</th>
@@ -121,12 +122,9 @@ const Cart = () => {
             Volver a la tienda
           </button>
         </Link>
-        <button className="btn btn-success btn-lg" onClick={generateOrder}>
-          Comprar
-        </button>
+        <button onClick={() => setShowForm(true)}>comprar</button>
       </div>
     </div>
   );
 };
-
 export default Cart;
