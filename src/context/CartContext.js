@@ -37,9 +37,10 @@ const CartProvider = ({ children }) => {
     } else {
       const newProducts = [...products, product];
       setProducts(newProducts);
-      localStorage.setItem("cart", JSON.stringify(newProducts));
     }
-  };
+    localStorage.setItem("cart", JSON.stringify(products));
+  }
+  
 
   const removeProduct = (id) => {
     const newProducts = products.filter((product) => product.id !== id);
