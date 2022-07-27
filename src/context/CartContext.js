@@ -7,11 +7,10 @@ const CartProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [qtyProducts, setQtyProducts] = useState(0);
 
-  
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const cartProducts = localStorage.getItem("cart");  
+    const cartProducts = localStorage.getItem("cart");
     if (cartProducts) {
       setProducts(JSON.parse(cartProducts));
     }
@@ -29,32 +28,36 @@ const CartProvider = ({ children }) => {
       return acc + product.price * product.qty;
     }, 0);
     setTotal(totalPrice);
-  }
-  , [products]);
+  }, [products]);
 
   const addProduct = (product) => {
-    const newProducts = [...products, product];
-    setProducts(newProducts);
-    localStorage.setItem("cart", JSON.stringify(newProducts));
-  }
+    const productInCart = products.find((p) => p.id === product.id);
+    if (productInCart) {
+      productInCart.qty++;
+    } else {
+      const newProducts = [...products, product];
+      setProducts(newProducts);
+      localStorage.setItem("cart", JSON.stringify(newProducts));
+    }
+  };
 
   const removeProduct = (id) => {
     const newProducts = products.filter((product) => product.id !== id);
     setProducts(newProducts);
     localStorage.setItem("cart", JSON.stringify(newProducts));
-  }
+  };
 
   const clearCart = () => {
     setProducts([]);
     localStorage.removeItem("cart");
-  }
+  };
 
   const calculateTotal = () => {
     const totalPrice = products.reduce((acc, product) => {
       return acc + product.price * product.qty;
     }, 0);
     setTotal(totalPrice);
-  }
+  };
 
   return (
     <Provider
@@ -72,11 +75,9 @@ const CartProvider = ({ children }) => {
       {children}
     </Provider>
   );
-}
-
+};
 
 export default CartProvider;
-
 
 //   const getQtyProducts = () => {
 //     let qty = 0;
@@ -114,7 +115,6 @@ export default CartProvider;
 //     return total;
 //   };
 
-  
 //   const clearCart = () => {
 //     setProducts([]);
 //     setQtyProducts(0);
