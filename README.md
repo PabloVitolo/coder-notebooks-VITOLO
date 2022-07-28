@@ -34,13 +34,13 @@ frameworks más populares y avanzados del momento.
 
 <div align="center">
 
-[![Product Name Screen Shot][product-screenshot1]](https://example.com)
+[![Product Name Screen Shot][product-screenshot1]](https://coder-notebooks.herokuapp.com/)
 <br />
 
-[![Product Name Screen Shot][product-screenshot2]](https://example.com)
+[![Product Name Screen Shot][product-screenshot2]](https://coder-notebooks.herokuapp.com/)
 <br />
 
-[![Product Name Screen Shot][product-screenshot3]](https://example.com)
+[![Product Name Screen Shot][product-screenshot3]](https://coder-notebooks.herokuapp.com/)
 
 <br />
 <br />
@@ -51,7 +51,7 @@ frameworks más populares y avanzados del momento.
 
 email: pablomijack32@gmail.com
 
-VER ONLINE: ***[https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)***
+VER ONLINE: **https://coder-notebooks.herokuapp.com/**
 
 <p align="right">(<a href="#top">volver arriba</a>)</p>
 
