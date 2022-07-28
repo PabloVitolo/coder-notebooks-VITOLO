@@ -13,9 +13,9 @@ frameworks más populares y avanzados del momento.
 <br />
 
 
-<div align="left">
+
 ### Construido con
-<br />
+<div align="left">
 
 - [![React][react.js]][react-url]
 - [![Bootstrap][bootstrap.com]][bootstrap-url]

@@ -94,7 +94,7 @@ const Cart = () => {
             <th>Producto</th>
             <th>Precio</th>
             <th>Cantidad</th>
-            <th>Total</th>
+            <th>SubTotal</th>
             <th>Quitar</th>
           </tr>
         </thead>
