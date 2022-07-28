@@ -11,11 +11,11 @@ Esta es la entrega final del proyecto del curso de REACT de CoderHouse, que es e
 Asimismo, aprendí a aplicar el manejo de rutas utilizando Firebase, y comprendí la utilización del virtual DOM mediante los desarrollos de React JS.
 El objetivo final fue poder crear mis propias aplicaciones SPA, y estar en condiciones de hacer cualquier desarrollo con uno de los
 frameworks más populares y avanzados del momento.
-<br />
+
 
 <div align="left">
 ### Construido con
-<br />
+
 - [![React][react.js]][react-url]
 - [![Bootstrap][bootstrap.com]][bootstrap-url]
 
