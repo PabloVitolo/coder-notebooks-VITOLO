@@ -31,16 +31,25 @@ const CartProvider = ({ children }) => {
   }, [products]);
 
   const addProduct = (product) => {
-    const productInCart = products.find((p) => p.id === product.id);
-    if (productInCart) {
-      productInCart.qty++;
+    const cartProducts = localStorage.getItem("cart");
+    if (cartProducts) {
+      const newProducts = JSON.parse(cartProducts);
+      const productIndex = newProducts.findIndex(
+        (item) => item.id === product.id
+      );
+      if (productIndex !== -1) {
+        newProducts[productIndex].qty += product.qty;
+        setProducts([...newProducts]);
+        localStorage.setItem("cart", JSON.stringify(newProducts));
+      } else {
+        setProducts([...newProducts, product]);
+        localStorage.setItem("cart", JSON.stringify([...newProducts, product]));
+      }
     } else {
-      const newProducts = [...products, product];
-      setProducts(newProducts);
+      setProducts([product]);
+      localStorage.setItem("cart", JSON.stringify([product]));
     }
-    localStorage.setItem("cart", JSON.stringify(products));
-  }
-  
+  };
 
   const removeProduct = (id) => {
     const newProducts = products.filter((product) => product.id !== id);
@@ -68,7 +77,6 @@ const CartProvider = ({ children }) => {
         removeProduct,
         clearCart,
         calculateTotal,
-        clearCart,
         qtyProducts,
         total,
       }}
