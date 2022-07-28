@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/PabloVitolo/coder-notebooks-VITOLO">
+  <a href="https://coder-notebooks.herokuapp.com/">
     <img src="./public/CoderNotebooksLOGO.png" alt="Logo" width="200" height="40">
   </a>
 
@@ -56,7 +56,7 @@ VER ONLINE: **https://coder-notebooks.herokuapp.com/**
 <p align="right">(<a href="#top">volver arriba</a>)</p>
 
 <div align="center">
-  <a href="https://github.com/PabloVitolo/coder-notebooks-VITOLO">
+  <a href="https://coder-notebooks.herokuapp.com/">
     <img src="./public/CoderNotebooksLOGO.png" alt="Logo" width="100" height="20">
   </a>
 
